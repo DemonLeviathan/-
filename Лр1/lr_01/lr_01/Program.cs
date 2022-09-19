@@ -207,7 +207,18 @@ namespace lr_01
                 Console.WriteLine();
             }
 
-                
-        }
+            var Array1 = new[] { 1, 0, 0, 1 };
+            var str0 = "dsfghjdrftgyh";
+
+            (int, string, char, string, ulong) Tuple1 = (13, "sdrf", 'g', "erdtfv", 7457845);
+            Console.WriteLine("All tuple: {0}", Tuple1);
+            Console.WriteLine($"1: {Tuple1.Item1},  3: {Tuple1.Item3},  4: {Tuple1.Item4}");
+            (int number, string s1, char symbol, string s2, ulong l1) = Tuple1;
+            Console.WriteLine($"int: {number}, 1st string: {s1}, char: {symbol}, 2nd string: {s2}, ulong: {l1}");
+
+            (int, short) tuple2 = (13, 17);
+            (long, float) tuple3 = (13, 17);
+            Console.WriteLine(tuple2 == tuple3);
+         }
     }
 }

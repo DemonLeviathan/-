@@ -208,7 +208,7 @@ namespace lr_01
             }
 
             var Array1 = new[] { 1, 0, 0, 1 };
-            var str0 = "dsfghjdrftgyh";
+            var str0 = "dsfghjdrftgyh";  
 
             (int, string, char, string, ulong) Tuple1 = (13, "sdrf", 'g', "erdtfv", 7457845);
             Console.WriteLine("All tuple: {0}", Tuple1);
@@ -219,6 +219,79 @@ namespace lr_01
             (int, short) tuple2 = (13, 17);
             (long, float) tuple3 = (13, 17);
             Console.WriteLine(tuple2 == tuple3);
-         }
+
+            void Tuple(int[] IntegerArray, string str5)
+            {
+                int max = IntegerArray[0];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    if (IntegerArray[i] > max)
+                    {
+                        max = IntegerArray[i];
+                    }
+                }
+
+                int min = IntegerArray[0];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    if (IntegerArray[i] < min)
+                    {
+                        min = IntegerArray[i];
+                    }
+                }
+
+                int sum = 0;
+
+                for (int i = 0; i < 5; i++)
+                {
+                    sum += IntegerArray[i];
+                }
+
+                string symbol = str5.Substring(0, 1);
+
+                (int min, int max, int sum, string symbol) NewTuple;
+                NewTuple.Item1 = min;
+                NewTuple.Item2 = max;
+                NewTuple.Item3 = sum;
+                NewTuple.Item4 = symbol;
+
+                Console.WriteLine("New tuple: {0}", NewTuple);
+
+
+
+            }
+
+            int[] IntegerArray = new int[5] { 3, 7, 11, 0, 5 };
+
+            string str5 = "string"; 
+            Tuple(IntegerArray, str5);
+
+            void functionA()
+            {
+                try
+                {
+                    checked
+                    {
+                        int MaxValue = int.MaxValue;
+                        Console.WriteLine($"Checked: {MaxValue + 1}");
+                    }
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Overflow");
+                }
+            }
+
+            void functionB()
+            {
+                int MaxValue = int.MaxValue;
+                Console.WriteLine($"Unchecked: {MaxValue + 1}");
+            }
+
+            functionA();
+            functionB();
+        }
     }
 }

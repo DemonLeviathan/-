@@ -1,0 +1,14 @@
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\bin\Debug\netcoreapp3.1\lr_02.exe
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\bin\Debug\netcoreapp3.1\lr_02.deps.json
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\bin\Debug\netcoreapp3.1\lr_02.runtimeconfig.json
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\bin\Debug\netcoreapp3.1\lr_02.runtimeconfig.dev.json
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\bin\Debug\netcoreapp3.1\lr_02.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\bin\Debug\netcoreapp3.1\lr_02.pdb
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.csproj.AssemblyReference.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.GeneratedMSBuildEditorConfig.editorconfig
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.AssemblyInfoInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.AssemblyInfo.cs
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.csproj.CoreCompileInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.pdb
+D:\Универ\3-й семестр\Лабы ООП\Лр2\lr_02\lr_02\obj\Debug\netcoreapp3.1\lr_02.genruntimeconfig.cache

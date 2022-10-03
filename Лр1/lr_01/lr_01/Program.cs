@@ -275,7 +275,7 @@ namespace lr_01
                     checked
                     {
                         int MaxValue = int.MaxValue;
-                        Console.WriteLine($"Checked: {MaxValue + 1}");
+                        Console.WriteLine($"Checked: {MaxValue}");
                     }
                 }
                 catch (OverflowException)
@@ -287,7 +287,7 @@ namespace lr_01
             void functionB()
             {
                 int MaxValue = int.MaxValue;
-                Console.WriteLine($"Unchecked: {MaxValue + 1}");
+                Console.WriteLine($"Unchecked: {MaxValue}");
             }
 
             functionA();

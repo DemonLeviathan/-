@@ -125,6 +125,21 @@ namespace lr_02
             Console.WriteLine("Counter: " + Airline.count.ToString());
         }
 
+        public override bool Equals(object obj)
+        {
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return (flight_number / count);
+        }
+
+        public override string ToString()
+        {
+            return PLACE;
+        }
+        
     }
 
     class A

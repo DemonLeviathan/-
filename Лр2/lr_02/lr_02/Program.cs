@@ -127,7 +127,10 @@ namespace lr_02
 
         public override bool Equals(object obj)
         {
-            return true;
+            if (obj == null)
+                return false;
+            else
+                return true;
         }
 
         public override int GetHashCode()
@@ -144,12 +147,15 @@ namespace lr_02
 
     class A
     {
-        private string place;
-        A() { }
+        private string place = "undefined";
+        //A() { }
         public string Place
         {
-            get { return place; }
-            private set { place = value; }
+            /*get { return place; }
+            private set { place = value; }*/
+
+            get { return place;  }
+            set { place = value; }
         }
 
         public void PrintA()
@@ -158,12 +164,12 @@ namespace lr_02
         }
     }
     public partial class B
+    {
+        public void B1()
         {
-            public void B1()
-            {
-                Console.WriteLine("This is part 1");
-            }
+            Console.WriteLine("This is part 1");
         }
+    }
 
     class Program
     {
@@ -184,7 +190,21 @@ namespace lr_02
             var4.B1();
             var4.B2();
 
+            Console.WriteLine();
+
+            A a = new A();
+            a.Place = "Dresden";
+            string aPlace = a.Place;
+            Console.WriteLine(aPlace);
             /* A var4 = new A();*/
+
+            var l = object.Equals(var1, var2);
+            Console.WriteLine(l);
+
+            var iType = var1.GetType();
+            Console.WriteLine(iType);
+
+            
         }
     }
 }

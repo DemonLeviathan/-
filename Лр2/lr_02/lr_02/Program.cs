@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace lr_02
 {
@@ -102,7 +103,6 @@ namespace lr_02
         public Airline(out int result, ref int num, string location)
         {
             result = num + 1;
-
         }
         static Airline()
         {
@@ -203,8 +203,77 @@ namespace lr_02
 
             var iType = var1.GetType();
             Console.WriteLine(iType);
+            int size = 3;
 
-            
+            Console.WriteLine();
+            Airline[] ObjectArray = new Airline[size];
+
+            ObjectArray[0] = new Airline();
+            ObjectArray[1] = new Airline(2, "Berlin", ref n, "02:45", "Ty-134");
+            ObjectArray[2] = new Airline("Il-86");
+
+            foreach (Airline i in ObjectArray)
+            {
+                Console.WriteLine(i.destination);
+                Console.WriteLine(i.week_day);
+                Console.WriteLine(i.flight_number);
+            }
+            Console.WriteLine();
+
+            Airline[] ObjectArray2 = new Airline[] { var1, var2, var3 };
+
+            ObjectArray2[0] = var1;
+            ObjectArray2[1] = var2;
+            ObjectArray2[2] = var3;
+
+            List<Airline> FlightList = new List<Airline>();
+            for (int i = 0; i < ObjectArray2.Length; i++)
+            {
+                if (ObjectArray2[i].destination == "Berlin")
+                {
+                    FlightList.Add(ObjectArray2[i]);
+                }
+                    
+            }
+
+            if (FlightList.Count == 0)
+            {
+                Console.WriteLine("No such flights");
+            }
+
+            for (int i = 0; i < FlightList.Count; i++)
+            {
+                if (FlightList[i] != null)
+                {
+                    Console.WriteLine("Flights: {0}, {1}", FlightList[i].leave_time, FlightList[i].week_day);
+                }
+            }
+            Console.WriteLine();
+
+            List<Airline> FlightListbyDay = new List<Airline>();
+
+            for (int i = 0; i < ObjectArray2.Length; i++)
+            {
+                if (ObjectArray2[i].week_day == "Friday")
+                {
+                    FlightListbyDay.Add(ObjectArray2[i]);
+                }
+            }
+
+            if (FlightListbyDay.Count == 0)
+            {
+                Console.WriteLine("No such flights");
+            }
+
+            for (int i = 0; i < FlightListbyDay.Count; i++)
+            {
+                if (FlightListbyDay[i] != null)
+                {
+                    Console.WriteLine("Flights: {0}, {1}", FlightListbyDay[i].destination, FlightListbyDay[i].leave_time);
+                }
+            }
+
+
         }
     }
 }

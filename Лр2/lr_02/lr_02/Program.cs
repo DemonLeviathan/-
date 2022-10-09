@@ -273,7 +273,9 @@ namespace lr_02
                 }
             }
 
-
+            var Flight = new { destination = "Tokyo", leave_time = "5:15", week_day = "Monday" };
+            Console.WriteLine(Flight.GetType());
+            Console.WriteLine("Anonymous flight: {0}, {1}, {2}", Flight.destination, Flight.leave_time, Flight.week_day);
         }
     }
 }

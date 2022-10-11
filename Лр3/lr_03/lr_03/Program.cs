@@ -24,8 +24,7 @@ namespace lr_03
 
         public static ClassArray operator -(ClassArray array1, ClassArray array2)
         {
-            /*int difference = 0;
-            difference = array1.charArray.Length - array2.charArray.Length;*/
+
             ClassArray difArray = new ClassArray(new char[array1.charArray.Length]);
 
             Array.Resize(ref array1.charArray, array1.charArray.Length + array2.charArray.Length);
@@ -53,11 +52,11 @@ namespace lr_03
             {
                 if ((array1.charArray[i] == 'p') && (array2.charArray[i] == 'g'))
                 {
-                    return true;
+                    return false;
                 }
                 
             }
-            return false;
+            return true;
 
         }
 
@@ -98,6 +97,44 @@ namespace lr_03
         {
             Console.WriteLine();
         }
+
+    }
+
+    class Production
+    {
+        public int ID;
+        public string Organization;
+
+        public Production(int id, string org)
+        {
+            this.ID = id;
+            this.Organization = org;
+        }
+
+        public void Print()
+        {
+            Console.Write("Organization: " + Organization + "  ");
+        }
+        public class Developer
+        {
+            public string developer;
+            public int ID;
+            public string department;
+
+            public Developer(string dev, int id, string dep)
+            {
+                this.ID = id;
+                this.department = dep;
+                this.developer = dev;
+            }
+
+            public void Print()
+            {
+                Console.WriteLine("Department: {0}, developer: {1}", department, developer);
+            }
+        }
+
+
     }
     class Programm
     {
@@ -142,7 +179,7 @@ namespace lr_03
             if (Array1 > Array2)
                 Console.WriteLine("Letters p and g in arrays");
             else
-                Console.WriteLine("no p and o in arrays");
+                Console.WriteLine("no p and g in arrays");
             Console.WriteLine();
 
             Console.WriteLine("Overload < : ");
@@ -152,17 +189,11 @@ namespace lr_03
                 Console.WriteLine("no y and t in arrays");
             Console.WriteLine();
 
-            //ClassArray var1 = new ClassArray();
-            //var1.Print();
-            /*for (int i = 0; i < 7; i++)
-            {
+            Production Company = new Production(1765, "SpaceX");
+            Production.Developer dev = new Production.Developer("Viktarovich I.", 15754, "development");
 
-            }*/
-
-            /*for (int i = 0; i < 7; i++)
-            {
-                Console.WriteLine(Array1[i]);
-            }*/
+            Company.Print();
+            dev.Print();
         }
     }
 }

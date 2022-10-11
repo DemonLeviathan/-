@@ -17,7 +17,7 @@ namespace lr_02
         public static int Flight_num => flight_num;
         public static string Type => type;
         public readonly string place = "Riga";
-        public readonly string IdDedstination;
+        public readonly string IdDestination;
         public const string PLACE = "Minsk";
         static int count = 0;
 
@@ -137,7 +137,7 @@ namespace lr_02
         {
             return (flight_number / count);
         }
-
+        
         public override string ToString()
         {
             return PLACE;

@@ -136,6 +136,25 @@ namespace lr_03
 
 
     }
+
+    static class StatisticOperation
+    { 
+        public static void Sum(int[] newIntArray)
+        {
+            Console.WriteLine(newIntArray.Sum());
+        }
+
+        public static void Difference(int[] newIntArray)
+        {
+            Console.WriteLine(newIntArray.Max() - newIntArray.Min());
+        }
+
+        public static void Counter(int[] newIntArray)
+        {
+            Console.WriteLine(newIntArray.Length);
+        }
+    }
+
     class Programm
     {
         static void Main(string[] args)
@@ -194,6 +213,21 @@ namespace lr_03
 
             Company.Print();
             dev.Print();
+
+            int[] IntArray = new int[] { 13, 27, 33 };
+            Console.Write("Sum of elements:  ");
+            StatisticOperation.Sum(IntArray);
+            Console.WriteLine();
+
+            Console.Write("Difference between minimal and maxinal elements:  ");
+            StatisticOperation.Difference(IntArray);
+            Console.WriteLine();
+
+            Console.Write("Number of elements:  ");
+            StatisticOperation.Counter(IntArray);
+            Console.WriteLine();
+
+
         }
     }
 }

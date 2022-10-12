@@ -153,6 +153,19 @@ namespace lr_03
         {
             Console.WriteLine(newIntArray.Length);
         }
+
+        public static string VowelsDeleting(string str)
+        {
+            str = Regex.Replace(str, "(?i)[aeyuio]", "");
+            return str;
+        }
+
+        public static string FirstFiveElementsDeleting(string str)
+        {
+            str = str.Remove(0, 5);
+            return str;
+        }
+
     }
 
     class Programm
@@ -227,7 +240,13 @@ namespace lr_03
             StatisticOperation.Counter(IntArray);
             Console.WriteLine();
 
+            string str = "Software Engeneering";
+            string printstring = StatisticOperation.VowelsDeleting(str);
+            Console.WriteLine("String without vowels:  {0}", printstring);
 
+            Console.WriteLine();
+            string deletefiveelements = StatisticOperation.FirstFiveElementsDeleting(str);
+            Console.WriteLine("String after deleting first 5 elements: {0}", deletefiveelements);
         }
     }
 }

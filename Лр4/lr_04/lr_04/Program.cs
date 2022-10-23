@@ -15,10 +15,6 @@ namespace lr_04
             skill = skill1;
             IDFighter = ID;
 
-            for (int i = 0; i < 4; i++)
-            {
-                IDFighter = i;
-            }
         }
 
         public virtual void Actions()
@@ -26,7 +22,7 @@ namespace lr_04
             Console.WriteLine("Weapon of {0} - {1}, skill - {2}", IDFighter, weapon, skill);
         }
     }
-    class Hunter : Fighter
+    sealed class Hunter : Fighter
     {
         public string Weapon
         {
@@ -96,6 +92,24 @@ namespace lr_04
         }
     }
 
+    // eponymous methods
+    abstract class BaseClone
+    {
+        public abstract bool DoClone();
+    }
+
+    class UserClass : BaseClone, ICloneable
+    {
+  
+        public override bool DoClone()
+        {
+            Console.WriteLine("Method from abstract class");
+            return true;
+        }
+    }
+
+
+
     class Program
     {
         static void Main(string[] args)    
@@ -109,6 +123,26 @@ namespace lr_04
             shaman.Actions();
             archer.Actions();
             psychic.Actions();
+
+            UserClass userClass = new UserClass();
+
+            userClass.DoClone();
+
+            object obj1 = new Hunter("gun", "shot", 1);
+            object obj2 = new Archer("bow", "firebolt", 3);
+            object obj3 = new Shaman("book of curses", "curse", 2);
+
+            Console.WriteLine(obj1 is Hunter);
+            Console.WriteLine(obj2 is Hunter);
+            Console.WriteLine(obj3 is Shaman);
+
+            IEnumerable<string> list1 = new[] { "hunter", "shaman", "archer", "psychic" };
+            IList<string> list2 = list1 as IList<string>;
+
+            if (list2 != null)
+            {
+                Console.WriteLine(list2[0] + " " + list2[list2.Count - 2]);
+            }
         }    
     }    
 }

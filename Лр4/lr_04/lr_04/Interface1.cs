@@ -11,4 +11,10 @@ namespace lr_04
         void Actions();
 
     }
+
+    public interface ICloneable
+    {
+        bool DoClone();
+    }
+
 }

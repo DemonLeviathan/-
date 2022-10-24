@@ -40,6 +40,11 @@ namespace lr_04
         {
             Console.WriteLine("Hunters ID - {0}, weapon - {1}, skill - {2}", IDFighter, weapon, skill);
         }
+
+        public override string ToString()
+        {
+            return weapon + " " + skill;
+        }
     }
 
     class Shaman : Fighter
@@ -61,7 +66,7 @@ namespace lr_04
 
         public override string ToString()
         {
-            return (weapon + skill);
+            return weapon + " " + skill;
         }
 
         public Shaman(string weapon1, string skill1, int ID) : base(weapon1, skill1, ID)
@@ -80,6 +85,11 @@ namespace lr_04
             skill = skill1;
             IDFighter = ID;
         }
+
+        public override string ToString()
+        {
+            return weapon + " " + skill;
+        }
     }
 
     class Psychic : Fighter
@@ -89,6 +99,11 @@ namespace lr_04
             weapon = weapon1;
             skill = skill1;
             IDFighter = ID;
+        }
+
+        public override string ToString()
+        {
+            return weapon + " " + skill;
         }
     }
 
@@ -108,7 +123,13 @@ namespace lr_04
         }
     }
 
-
+    class Printer
+    {
+        public void IAmPrinting(Fighter obj)
+        {
+            Console.WriteLine(obj.GetType().Name + " " + obj.ToString());
+        }
+    }
 
     class Program
     {
@@ -143,6 +164,19 @@ namespace lr_04
             {
                 Console.WriteLine(list2[0] + " " + list2[list2.Count - 2]);
             }
-        }    
+            Console.WriteLine(hunter.GetType() + " " + hunter.ToString());
+            Console.WriteLine(shaman.GetType() + " " + shaman.ToString());
+            Console.WriteLine(archer.GetType() + " " + archer.ToString());
+            Console.WriteLine(psychic.GetType() + " " + psychic.ToString());
+
+            Console.WriteLine();
+            Printer printer = new Printer();
+            Fighter[] array = { hunter, shaman, archer, psychic};
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                printer.IAmPrinting(array[i]);
+            }
+        }
     }    
 }

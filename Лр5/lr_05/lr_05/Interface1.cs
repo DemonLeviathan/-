@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lr_04
+namespace lr_05
 {
     interface IFighters
     {
@@ -14,7 +14,7 @@ namespace lr_04
 
     public interface ICloneable
     {
-        void DoClone();
+        bool DoClone();
     }
 
 }

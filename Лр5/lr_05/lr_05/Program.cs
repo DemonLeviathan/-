@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace lr_04
+namespace lr_05
 {
     public abstract class Fighter : IFighters
     {
         public string weapon;
         public string skill;
         public int IDFighter;
-        // public string[] Fighters = { "Hunter", "Shaman", "Archer", "Psychic" };
 
         public Fighter(string weapon1, string skill1, int ID)
         {
@@ -45,6 +44,25 @@ namespace lr_04
         {
             return weapon + " " + skill;
         }
+
+        enum Skill
+        {
+            skill1, 
+            skill2, 
+            skill3,
+            skill4
+        }
+
+        struct Options
+        {
+            public string action;
+            public int skill;
+
+            public void Actions()
+            {
+                Console.WriteLine($"Action {action} on skill {skill}");
+            }
+        }
     }
 
     class Shaman : Fighter
@@ -75,9 +93,28 @@ namespace lr_04
             skill = skill1;
             IDFighter = ID;
         }
+
+        enum Skill
+        {
+            skill1,
+            skill2,
+            skill3,
+            skill4
+        }
+
+        struct Options
+        {
+            public string action;
+            public int skill;
+
+            public void Actions()
+            {
+                Console.WriteLine($"Action {action} on skill {skill}");
+            }
+        }
     }
 
-    class Archer : Fighter
+    public partial class Archer : Fighter
     {
         public Archer(string weapon1, string skill1, int ID) : base(weapon1, skill1, ID)
         {
@@ -89,6 +126,25 @@ namespace lr_04
         public override string ToString()
         {
             return weapon + " " + skill;
+        }
+
+        enum Skill
+        {
+            skill1,
+            skill2,
+            skill3,
+            skill4
+        }
+
+        struct Options
+        {
+            public string action;
+            public int skill;
+
+            public void Actions()
+            {
+                Console.WriteLine($"Action {action} on skill {skill}");
+            }
         }
     }
 
@@ -105,25 +161,39 @@ namespace lr_04
         {
             return weapon + " " + skill;
         }
+        enum Skill
+        {
+            skill1,
+            skill2,
+            skill3,
+            skill4
+        }
+
+        struct Options
+        {
+            public string action;
+            public int skill;
+
+            public void Actions()
+            {
+                Console.WriteLine($"Action {action} on skill {skill}");
+            }
+        }
     }
 
     // eponymous methods
     abstract class BaseClone
     {
-        public abstract void DoClone();
+        public abstract bool DoClone();
     }
 
     class UserClass : BaseClone, ICloneable
     {
-  
-        public override void DoClone()
+
+        public override bool DoClone()
         {
             Console.WriteLine("Method from abstract class");
-        }
-
-        void ICloneable.DoClone()
-        {
-            Console.WriteLine("Method from interface");
+            return true;
         }
     }
 
@@ -137,7 +207,7 @@ namespace lr_04
 
     class Program
     {
-        static void Main(string[] args)    
+        static void Main(string[] args)
         {
             Hunter hunter = new Hunter("gun", "shot", 1);
             Shaman shaman = new Shaman("book of curses", "curse", 2);
@@ -148,15 +218,11 @@ namespace lr_04
             shaman.Actions();
             archer.Actions();
             psychic.Actions();
-
-            Console.WriteLine();
+            archer.Fighter_Skill();
 
             UserClass userClass = new UserClass();
-            ICloneable cloneable = new UserClass();
 
             userClass.DoClone();
-            cloneable.DoClone();
-            Console.WriteLine();
 
             object obj1 = new Hunter("gun", "shot", 1);
             object obj2 = new Archer("bow", "firebolt", 3);
@@ -180,12 +246,12 @@ namespace lr_04
 
             Console.WriteLine();
             Printer printer = new Printer();
-            Fighter[] array = { hunter, shaman, archer, psychic};
+            Fighter[] array = { hunter, shaman, archer, psychic };
 
             for (int i = 0; i < array.Length; i++)
             {
                 printer.IAmPrinting(array[i]);
             }
         }
-    }    
+    }
 }

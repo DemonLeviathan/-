@@ -32,4 +32,36 @@ namespace lr_05
             }
         }
     }
+
+    public class ArmyController : Army
+    {
+        public void AttackPower()
+        {
+            int max = 0;
+            for (int i = 0; i < Fighters.Count; i++)
+            {
+                if (max < Fighters[i].average_damage)
+                {
+                    max = Fighters[i].average_damage;
+                }
+            }
+            Console.WriteLine("The most powerful fighter with damage: " + max);
+
+            for (int i = 0; i < Fighters.Count; i++)
+            {
+                if (max == Fighters[i].average_damage)
+                {
+                    Console.WriteLine(Fighters[i].name + " - is the strongest fighter");
+                }
+            }
+
+        }
+
+        public void SortFighters()
+        {
+            var sorted = Fighters.OrderBy(f => f.average_damage).ToList();
+           // Console.WriteLine(sorted);
+        }
+
+    }
 }

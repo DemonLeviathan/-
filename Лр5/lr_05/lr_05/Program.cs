@@ -1,25 +1,28 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace lr_05
 {
     public abstract class Fighter : IFighters
     {
+        public string name;
         public string weapon;
         public string skill;
         public int average_damage;
         public int IDFighter;
 
-        public Fighter(string weapon1, string skill1, int ID, int damage)
+        public Fighter(string weapon1, string skill1, int ID, int damage, string Name)
         {
             weapon = weapon1;
             skill = skill1;
             IDFighter = ID;
             average_damage = damage;
+            this.name = name;
         }
 
         public virtual void Actions()
         {
-            Console.WriteLine("Weapon of {0} - {1}, skill - {2}, average damage - {3}", IDFighter, weapon, skill, average_damage);
+            Console.WriteLine("Weapon of {0} - {1}, skill - {2}, average damage - {3}", name, weapon, skill, average_damage);
         }
     }
     sealed class Hunter : Fighter
@@ -29,12 +32,13 @@ namespace lr_05
             get { return weapon; }
             set { weapon = value; }
         }
-        public Hunter(string weapon, string skill1, int ID, int damage) : base(weapon, skill1, ID, damage)
+        public Hunter(string weapon, string skill1, int ID, int damage, string Name) : base(weapon, skill1, ID, damage, Name)
         {
             this.Weapon = weapon;
             skill = skill1;
             IDFighter = ID;
             average_damage = damage;
+            name = Name;
         }
 
         public override void Actions()
@@ -70,23 +74,25 @@ namespace lr_05
             return weapon + " " + skill;
         }
 
-        public Shaman(string weapon1, string skill1, int ID, int damage) : base(weapon1, skill1, ID, damage)
+        public Shaman(string weapon1, string skill1, int ID, int damage, string Name) : base(weapon1, skill1, ID, damage, Name)
         {
             weapon = weapon1;
             skill = skill1;
             IDFighter = ID;
             average_damage = damage;
+            name = Name;
         }
     }
 
     public partial class Archer : Fighter
     {
-        public Archer(string weapon1, string skill1, int ID, int damage) : base(weapon1, skill1, ID, damage)
+        public Archer(string weapon1, string skill1, int ID, int damage, string Name) : base(weapon1, skill1, ID, damage, Name)
         {
             weapon = weapon1;
             skill = skill1;
             IDFighter = ID;
             average_damage = damage;
+            name = Name;
         }
 
         public override string ToString()
@@ -98,12 +104,13 @@ namespace lr_05
 
     class Psychic : Fighter
     {
-        public Psychic(string weapon1, string skill1, int ID, int damage) : base(weapon1, skill1, ID, damage)
+        public Psychic(string weapon1, string skill1, int ID, int damage, string Name) : base(weapon1, skill1, ID, damage, Name)
         {
             weapon = weapon1;
             skill = skill1;
             IDFighter = ID;
             average_damage = damage;
+            name = Name;
         }
 
         public override string ToString()
@@ -111,12 +118,12 @@ namespace lr_05
             return weapon + " " + skill;
         }
     }
-    enum Skill
+    enum Functions
     {
-        skill1,
-        skill2,
-        skill3,
-        skill4
+        Add,
+        Remove,
+        Show,
+        
     }
 
     struct Options
@@ -158,12 +165,12 @@ namespace lr_05
     {
         static void Main(string[] args)
         {
-            Hunter hunter = new Hunter("gun", "shot", 1, 107);
-            Shaman shaman = new Shaman("book of curses", "curse", 2, 94);
-            Archer archer = new Archer("bow", "firebolt", 3, 123);
-            Psychic psychic = new Psychic("tarot", "mind capture", 4, 77);
+            Hunter hunter = new Hunter("gun", "shot", 1, 107, "Hunter");
+            Shaman shaman = new Shaman("book of curses", "curse", 2, 94, "Shaman");
+            Archer archer = new Archer("bow", "firebolt", 3, 123, "Archer");
+            Psychic psychic = new Psychic("tarot", "mind capture", 4, 77, "Psychic");
 
-            /*hunter.Actions();
+           /* hunter.Actions();
             shaman.Actions();
             archer.Actions();
             psychic.Actions();*/
@@ -173,9 +180,9 @@ namespace lr_05
 
             //userClass.DoClone();
 
-            object obj1 = new Hunter("gun", "shot", 1, 107);
-            object obj2 = new Archer("bow", "firebolt", 3, 123);
-            object obj3 = new Shaman("book of curses", "curse", 2, 94);
+            object obj1 = new Hunter("gun", "shot", 1, 107, "Hunter");
+            object obj2 = new Archer("bow", "firebolt", 3, 123, "Archer");
+            object obj3 = new Shaman("book of curses", "curse", 2, 94, "Shaman");
 
             /*Console.WriteLine(obj1 is Hunter);
             Console.WriteLine(obj2 is Hunter);
@@ -198,20 +205,24 @@ namespace lr_05
             Printer printer = new Printer();
             Fighter[] array = { hunter, shaman, archer, psychic };
 
-            for (int i = 0; i < array.Length; i++)
+            /*for (int i = 0; i < array.Length; i++)
             {
                 printer.IAmPrinting(array[i]);
-            }
+            }*/
 
             // 5 lr
 
-            Army army = new Army();
+            //Army army = new Army();
+            ArmyController army = new ArmyController();
+
             army.Add(hunter);
             army.Add(shaman);
             army.Add(archer);
             army.Add(psychic);
-
             army.Show();
+            Console.WriteLine();
+            army.AttackPower();
+            army.SortFighters();
         }
     }
 }

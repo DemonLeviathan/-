@@ -347,17 +347,9 @@ namespace lr_06
                 Archer archer = new Archer("bow", "firebolt", 3, 123, "Archer");
                 Psychic psychic = new Psychic("tarot", "mind capture", 4, -77, "Psychic");
             }
-            catch (DamageExeption ex)
+            catch 
             {
-                Console.WriteLine($"Error: {ex.Message}");
-                Console.WriteLine($"Uncorrect value: {ex.Damage}");
-                fileLogger.WriteLog(ex);
-            }
-            catch (IDExeption ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                Console.WriteLine($"Uncorrect value: {ex.IDExe}");
-                fileLogger.WriteLog(ex);
+                Console.WriteLine("Error. Undefined error");
             }
             finally
             {

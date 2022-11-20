@@ -64,5 +64,13 @@ namespace lr_06
             // Console.WriteLine(sorted);
         }
 
+        public void DamageExep(int damage)
+        {
+            if (damage < 0)
+            {
+                throw new DamageExeption("Error. Damage can't be less than 0", damage);
+            }
+        }
+
     }
 }

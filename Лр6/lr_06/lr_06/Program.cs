@@ -55,6 +55,10 @@ namespace lr_06
             IDFighter = ID;
             average_damage = damage;
             name = Name;
+            if (average_damage < 0)
+            {
+                throw new DamageExeption("Error. Damage can't be less than 0", average_damage);
+            }
         }
 
         public override void Actions()
@@ -142,14 +146,22 @@ namespace lr_06
 
     }
 
-    struct Options
+    public struct Options
     {
-        public string action;
-        public int skill;
-
-        public void Actions()
+        //public string action;
+        //public int skill;
+        public int Damage;
+       /* public void Actions()
         {
             Console.WriteLine($"Action {action} on skill {skill}");
+        }*/
+        public Options(int damage)
+        {
+            this.Damage = damage;
+            if (this.Damage < 0)
+            {
+                throw new Exception("Damage can't be less than 0");
+            }
         }
     }
 
@@ -279,14 +291,32 @@ namespace lr_06
                 Console.WriteLine("Ended #2");
             }
 
-            /*try
+            try
+            {
+                int[] array = new int[3] { 1, 2, 3 };
+                array[4] = 7;
+            }
+            catch (Exception ex) when (ex.Source.Length < 3)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch
+            {
+                Console.WriteLine("Extention");
+            }
+            finally
+            {
+                Console.WriteLine("Ended #3");
+            }
+
+            try
             {
 
             }
             catch
             {
 
-            }*/
+            }
         }
     }
 }

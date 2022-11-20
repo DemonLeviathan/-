@@ -7,39 +7,22 @@ using System.Threading.Tasks;
 
 namespace lr_06
 {
-    public class FighterExeption : System.Exception
+    public class FighterExeption : Exception
+    {
+        public string Error { get; set; }
+        public FighterExeption(string message, string value)
+            : base(message)
         {
-            public string Error { get; set; }
-            public FighterExeption(string message, string value)
-                : base(message)
-            {
-                this.Error = value;
-            }
-
+            this.Error = value;
         }
+    }
  
     public class DamageExeption : FighterExeption
     {
-        private int damage;
+        public int Damage { get; set; }
         public string weapon { get; set; } = "";
         public string skill1 { get; set; } = "";
         public int ID { get; set; } = 0;
-
-        public int Damage 
-        { 
-            get => damage;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new Exception("Damage can't be less than 0");
-                }
-                else
-                {
-                    damage = value;
-                }
-            }
-        }
         public DamageExeption(string message, int value)
             : base(message, "Error #1: Uncorrect number of damage")
         {

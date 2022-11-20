@@ -1,0 +1,2 @@
+20.11.2022 19:17:38
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -107

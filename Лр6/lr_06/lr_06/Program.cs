@@ -20,6 +20,15 @@ namespace lr_06
             IDFighter = ID;
             average_damage = damage;
             this.name = name;
+            if (average_damage < 0)
+            {
+                throw new DamageExeption("Error. Damage can't be less than 0", average_damage);
+            }
+            
+            if (IDFighter < 0 || IDFighter > 5)
+            {
+                throw new IDExeption("Error. Uncorrect ID value", IDFighter);
+            }
         }
 
         public int DamageEX
@@ -55,10 +64,7 @@ namespace lr_06
             IDFighter = ID;
             average_damage = damage;
             name = Name;
-            if (average_damage < 0)
-            {
-                throw new DamageExeption("Error. Damage can't be less than 0", average_damage);
-            }
+            
         }
 
         public override void Actions()
@@ -148,13 +154,8 @@ namespace lr_06
 
     public struct Options
     {
-        //public string action;
-        //public int skill;
         public int Damage;
-       /* public void Actions()
-        {
-            Console.WriteLine($"Action {action} on skill {skill}");
-        }*/
+
         public Options(int damage)
         {
             this.Damage = damage;
@@ -162,6 +163,17 @@ namespace lr_06
             {
                 throw new Exception("Damage can't be less than 0");
             }
+        }
+    }
+
+    public struct ID
+    {
+        public int IDFighter;
+        public ID(int id)
+        {
+            this.IDFighter = id;
+            if (this.IDFighter < 0 || this.IDFighter > 5)
+                throw new IDExeption("Uncorrect ID value", IDFighter);
         }
     }
 
@@ -248,15 +260,11 @@ namespace lr_06
 
             try
             {
-                Hunter hunter = new Hunter("gun", "shot", 1, -107, "Hunter");
-                Shaman shaman = new Shaman("book of curses", "curse", 2, 94, "Shaman");
+                Hunter hunter = new Hunter("gun", "shot", 1, 107, "Hunter");
+                Shaman shaman = new Shaman("book of curses", "curse", 2, -94, "Shaman");
                 Archer archer = new Archer("bow", "firebolt", 3, 123, "Archer");
                 Psychic psychic = new Psychic("tarot", "mind capture", 4, 77, "Psychic");
 
-                if (hunter.average_damage > 0)
-                {
-                    Console.WriteLine("norm");
-                }
                 /*army.Add(hunter);
                 army.Add(shaman);
                 army.Add(archer);
@@ -273,7 +281,8 @@ namespace lr_06
             }
             finally
             {
-                Console.WriteLine("Ended #1");
+                Console.WriteLine("Finished #1");
+                Console.WriteLine("---------------------------");
             }
 
             try
@@ -288,7 +297,9 @@ namespace lr_06
             }
             finally
             {
-                Console.WriteLine("Ended #2");
+                Console.WriteLine("Finished #2");
+                Console.WriteLine("---------------------------");
+
             }
 
             try
@@ -306,16 +317,52 @@ namespace lr_06
             }
             finally
             {
-                Console.WriteLine("Ended #3");
+                Console.WriteLine("Finished #3");
+                Console.WriteLine("---------------------------");
             }
 
             try
             {
-
+                Hunter hunter = new Hunter("gun", "shot", 1, 107, "Hunter");
+                Shaman shaman = new Shaman("book of curses", "curse", 2, 94, "Shaman");
+                Archer archer = new Archer("bow", "firebolt", 6, 123, "Archer");
+                Psychic psychic = new Psychic("tarot", "mind capture", 4, 77, "Psychic");
             }
-            catch
+            catch (IDExeption ex)
             {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Uncorrect value: {ex.IDExe}");
+                fileLogger.WriteLog(ex);
+            }
+            finally
+            {
+                Console.WriteLine("Finished #4");
+                Console.WriteLine("---------------------------");
+            }
 
+            try
+            {
+                Hunter hunter = new Hunter("gun", "shot", 1, 107, "Hunter");
+                Shaman shaman = new Shaman("book of curses", "curse", 7, 94, "Shaman");
+                Archer archer = new Archer("bow", "firebolt", 3, 123, "Archer");
+                Psychic psychic = new Psychic("tarot", "mind capture", 4, -77, "Psychic");
+            }
+            catch (DamageExeption ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Uncorrect value: {ex.Damage}");
+                fileLogger.WriteLog(ex);
+            }
+            catch (IDExeption ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Uncorrect value: {ex.IDExe}");
+                fileLogger.WriteLog(ex);
+            }
+            finally
+            {
+                Console.WriteLine("Finished #5");
+                Console.WriteLine("---------------------------");
             }
         }
     }

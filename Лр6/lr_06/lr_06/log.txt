@@ -1,2 +1,58 @@
 20.11.2022 19:17:38
 Error #1: Uncorrect number of damageError. Damage can't be less than 0 -107
+20.11.2022 19:29:04
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -107
+20.11.2022 19:35:42
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -107
+20.11.2022 19:36:16
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -107
+20.11.2022 19:36:30
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 19:37:53
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 19:39:33
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 19:39:33
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 19:40:19
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 19:40:19
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 19:41:08
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 19:41:08
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 19:47:38
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 19:47:38
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 20:25:21
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 20:25:21
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 20:25:44
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 20:25:44
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 20:25:59
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 20:25:59
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 21:14:39
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 21:14:39
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 21:14:39
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 21:15:02
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 21:15:02
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 21:15:02
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 21:15:30
+Error #1: Uncorrect number of damageError. Damage can't be less than 0 -94
+20.11.2022 21:15:30
+Error #2: Uncorrect IDError. Uncorrect ID value 6
+20.11.2022 21:15:30
+Error #2: Uncorrect IDError. Uncorrect ID value 7

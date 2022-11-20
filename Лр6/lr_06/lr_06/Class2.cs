@@ -72,5 +72,12 @@ namespace lr_06
             }
         }
 
+        public void IDExp(int id)
+        {
+            if (id < 0 || id > 5)
+            {
+                throw new IDExeption("Error. Uncorrect ID value", id);
+            }
+        }
     }
 }

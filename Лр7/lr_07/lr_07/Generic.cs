@@ -6,18 +6,13 @@ using System.Threading.Tasks;
 
 namespace lr_07
 {
-    public class CollectionType<T> : IOptions<T> where T : ClassArray
+    public class CollectionType<T> : IOptions<T> /*where T : Fighter   | where T : ClassArray    */
     {
         List<T> list { get; set; }  
 
         public CollectionType()
         {
             list = new List<T>();   
-
-            if (list != null)
-            {
-
-            }
         }
         public void Add(T obj)
         {

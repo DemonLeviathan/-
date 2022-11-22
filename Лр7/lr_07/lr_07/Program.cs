@@ -259,20 +259,38 @@ namespace lr_07
             {
                 CollectionType<ClassArray> collectionType = new CollectionType<ClassArray>();
                 //CollectionType<ClassArray> collectionType2 = new CollectionType<ClassArray>();
+                CollectionType<string> collectionType1 = new CollectionType<string>();
+                CollectionType<string> collectionType2 = new CollectionType<string>();
+                CollectionType<string> collectionType3 = new CollectionType<string>();
+
                 collectionType.Add(Array1 + Array2);
                 collectionType.Add(Array2);
                 collectionType.Add(Array3);
                 //collectionType.Remove(Array4);
-                collectionType.See();
+                //collectionType.See();
+                
+                collectionType1.Add("string 1");
+                collectionType1.Add("srting 2");
+                collectionType1.Add("string 3");
+                collectionType1.Add("string 4");
+                collectionType1.Add("string 5");
+                collectionType1.See();
+
+                CollectionType<int> collectionType4 = new CollectionType<int>();
+                CollectionType<int> collectionType5 = new CollectionType<int>();
+                collectionType5.Add(1);
+                collectionType5.Add(2);
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                Console.WriteLine("No such elements");
+                Console.WriteLine(ex.Message);
             }
             finally
             {
                 Console.WriteLine("Done");
             }
+
+
         }
     }
 }

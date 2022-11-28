@@ -173,7 +173,7 @@ namespace lr_07
 
     }
 
-    class Programm
+    public class Programm
     {
         static void Main(string[] args)
         {
@@ -267,19 +267,24 @@ namespace lr_07
                 collectionType.Add(Array2);
                 collectionType.Add(Array3);
                 //collectionType.Remove(Array4);
-                //collectionType.See();
-                
+                //collectionType.Watch();
+
                 collectionType1.Add("string 1");
-                collectionType1.Add("srting 2");
+                collectionType1.Add("string 2");
                 collectionType1.Add("string 3");
+                //collectionType1.Watch();
                 collectionType1.Add("string 4");
                 collectionType1.Add("string 5");
-                collectionType1.See();
+                //collectionType1.Watch();
 
                 CollectionType<int> collectionType4 = new CollectionType<int>();
                 CollectionType<int> collectionType5 = new CollectionType<int>();
                 collectionType5.Add(1);
                 collectionType5.Add(2);
+
+                FileWriter filewriter = new FileWriter();
+                filewriter.Writee("1.txt", collectionType);
+                filewriter.Read("1.txt", collectionType);
             }
             catch (Exception ex) 
             {
@@ -289,8 +294,6 @@ namespace lr_07
             {
                 Console.WriteLine("Done");
             }
-
-
         }
     }
 }

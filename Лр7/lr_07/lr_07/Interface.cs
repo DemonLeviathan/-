@@ -10,7 +10,7 @@ namespace lr_07
     {
         public void Add(T obj);
         public void Remove(T obj);
-        public void See();
+        public void Watch();
 
     }
 }

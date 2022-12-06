@@ -5,6 +5,70 @@ namespace lr_08
 {
     public class Programm
     {
+        static string result = "";
+
+        static string DeleteSpace(string str) // 1
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == ' ')
+                {
+                    continue;
+                }
+                else
+                {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+
+        static string DeleteSeparator(string str) // 2
+        {
+            result = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ((str[i] == ',') || (str[i] == ':') || (str[i] == ';') || (str[i] == '.') || (str[i] == '-'))
+                {
+                    continue;
+                }
+                else
+                {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+
+        static string AddSymbol(string str) // 3
+        {
+            result = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == 's')
+                {
+                    result += '*';
+                }
+                else
+                {
+                    result += '$';
+                }
+            }
+            return result;
+        }
+
+        static string UpperCase(string str) // 4
+        {
+            str = str.ToUpper();
+            return str;
+        }
+
+        static string ConcatWithSlash(string str1, string str2) // 5
+        {
+            result = str1 + "|" + str2;
+            return result;
+        }
+
         static void Main(string[] args)
         {
             User user1 = new User(155);
@@ -22,7 +86,28 @@ namespace lr_08
             user4.Movement("recycle bin");
             Console.WriteLine($"Users file was moved to {user4.Location}");
 
-            //user1.Compress += Compression;
+            Console.WriteLine("---------------------------");
+
+            //user2.DeleteSpace("string without spaces");
+            /*user4.DeleteSeparator("string, without separators: no comma; no - dot.");
+            user5.AddSymbol("string str");
+            user6.UpperCase("string in upper case");
+            user7.ConcatWithSlash("part1", "part2");*/
+
+            Func<string, string> func1 = DeleteSpace;
+            Console.WriteLine(func1("string without spaces"));
+
+            Func<string, string> func2 = DeleteSeparator;
+            Console.WriteLine(func2("string, without separators: no comma; no - dot."));
+
+            Func<string, string> func3 = AddSymbol;
+            Console.WriteLine(func3("string str s"));
+
+            Func<string, string> func4 = UpperCase;
+            Console.WriteLine(func4("string in upper case"));
+
+            Func<string, string, string> func5 = ConcatWithSlash;
+            Console.WriteLine(func5("part1", "part2"));
         }
     }
 }

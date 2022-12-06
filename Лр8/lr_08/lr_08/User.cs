@@ -40,5 +40,9 @@ namespace lr_08
         public delegate void UserMessage(string message);
         event UserMessage? Move;
         public event UserMessage? Compress;
+
+        string result = "";
+
+        //delegate bool Predicate<in T>(T obj);
     }
 }

@@ -88,12 +88,6 @@ namespace lr_08
 
             Console.WriteLine("---------------------------");
 
-            //user2.DeleteSpace("string without spaces");
-            /*user4.DeleteSeparator("string, without separators: no comma; no - dot.");
-            user5.AddSymbol("string str");
-            user6.UpperCase("string in upper case");
-            user7.ConcatWithSlash("part1", "part2");*/
-
             Func<string, string> func1 = DeleteSpace;
             Console.WriteLine(func1("string without spaces"));
 

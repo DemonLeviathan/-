@@ -1,0 +1,15 @@
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\bin\Debug\net6.0\test2.exe
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\bin\Debug\net6.0\test2.deps.json
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\bin\Debug\net6.0\test2.runtimeconfig.json
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\bin\Debug\net6.0\test2.dll
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\bin\Debug\net6.0\test2.pdb
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.csproj.AssemblyReference.cache
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.AssemblyInfoInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.AssemblyInfo.cs
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.csproj.CoreCompileInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.dll
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\refint\test2.dll
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.pdb
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\test2.genruntimeconfig.cache
+D:\Универ\3-й семестр\Лабы ООП\test\test2\test2\obj\Debug\net6.0\ref\test2.dll

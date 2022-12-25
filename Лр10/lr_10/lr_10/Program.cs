@@ -75,6 +75,7 @@ namespace lr_10
             Airline airline9 = new Airline(5, "Leipzig", 5, 19, "Ty-134");
 
             List<Airline> airlines = new List<Airline>();
+            List<Airline> airlines2 = new List<Airline>();
 
             airlines.Add(airline);
             airlines.Add(airline1);
@@ -86,6 +87,12 @@ namespace lr_10
             airlines.Add(airline7);
             airlines.Add(airline8);
             airlines.Add(airline9);
+
+            airlines2.Add(airline9);
+            airlines2.Add(airline);
+            airlines2.Add(airline7);
+            airlines2.Add(airline5);
+            airlines2.Add(airline3);
 
             var selectflight = airlines.Where(a => a.destination.Contains("Leipzig"));
             foreach (var flight in selectflight)
@@ -123,6 +130,15 @@ namespace lr_10
             {
                 Console.WriteLine(elem);
             }*/
+
+            var queryJoin = from a in airlines
+                            join f in airlines2 on a.destination equals f.destination
+                            select new { a.destination, f.week_day };
+
+            foreach (var i in queryJoin)
+            {
+                Console.WriteLine($"{i.destination} - {i.week_day} ");
+            }
         }
     }
 }

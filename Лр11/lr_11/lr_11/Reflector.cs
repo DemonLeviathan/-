@@ -33,7 +33,7 @@ namespace lr_11
         static public void GetMethod(object obj)
         {
             Type type = Type.GetType(obj.ToString());
-            foreach (MethodInfo info in type.GetMethods() )
+            foreach (MethodInfo info in type.GetMethods())
             {
                 Console.WriteLine(info.Name);
             }
@@ -78,12 +78,12 @@ namespace lr_11
             }
         }
 
-        static public void Invoke(string name, string generate )
+        static public void Invoke(string name, string generate)
         {
             Type type = Type.GetType(name);
 
             List<string> args = File.ReadAllLines("D:\\Универ\\3-й семестр\\Лабы ООП\\Лр11\\lr_11\\lr_11\\in.txt").ToList();
-            List<string>[] args2 = new List<string>[]{ args };
+            List<string>[] args2 = new List<string>[] { args };
 
             try
             {
@@ -96,11 +96,38 @@ namespace lr_11
                 Console.WriteLine(e.Message);
             }
         }
-    }
 
-    public class Person
-    {
-        public string Name { get; set; }
-        public Person(string name) => Name = name;
+        public static void Create(string currentClassName, string parm)
+        {
+            Type type = Type.GetType(currentClassName);
+            ConstructorInfo[] constructorInfo = type.GetConstructors();
+            object obj = Activator.CreateInstance(type, args: parm);
+            Console.WriteLine(obj.ToString());
+        }
+
+        public static void InfoToFile(string obj)
+        {
+            Type type = Type.GetType(obj.ToString());
+            string path = "D:\\Универ\\3-й семестр\\Лабы ООП\\Лр11\\lr_11\\lr_11\\reflector.txt";
+            using (StreamWriter sw = new StreamWriter(path, false, Encoding.Default))
+            {
+                sw.WriteLine($"-----------------{obj}-----------------");
+                sw.WriteLine($"Assembly:" + type.Assembly);
+                foreach (ConstructorInfo constructorInfo in type.GetConstructors())
+                    sw.WriteLine(constructorInfo);
+                sw.WriteLine($"Methodds:");
+                foreach (MethodInfo methodInfo in type.GetMethods())
+                    sw.WriteLine(methodInfo.Name);
+                sw.WriteLine($"Fields and properties:");
+                foreach (FieldInfo fieldInfo in type.GetFields())
+                    sw.WriteLine(fieldInfo);
+                foreach (PropertyInfo propertyInfo in type.GetProperties())
+                    sw.WriteLine(propertyInfo);
+                sw.WriteLine($"Interfaces:");
+                foreach (Type interfaceMapping in type.GetInterfaces())
+                    sw.WriteLine(interfaceMapping);
+                sw.WriteLine();
+            }
+        }
     }
 }

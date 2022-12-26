@@ -109,6 +109,14 @@ namespace lr_11
             Console.WriteLine("Calling class method by invoke: ");
             Reflector.PrintMethod("System.Object", "String");
             Console.WriteLine("-----------------------------------------------");
+
+            Reflector.InfoToFile("lr_11.Person");
+            Reflector.InfoToFile("lr_11.User");
+            Reflector.InfoToFile("lr_11.Book");
+
+            Reflector.Invoke("lr_11.Person", "ToConsole");
+            Console.WriteLine();
+            Reflector.Create("lr_11.Person", "Student");
         }
     }
 }

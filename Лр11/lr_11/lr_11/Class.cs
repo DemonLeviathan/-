@@ -3,9 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace lr_11
 {
+    public class Person
+    {
+        public string name;
+        public string Name 
+        { 
+            get { return name;}
+            set { name = value; } 
+        }
+        public Person(string name) => Name = name;
+        public Person()
+        { }
+
+        public void ToConsole(List<string> vs)
+        {
+            foreach (string str in vs)
+                Console.WriteLine(str);
+        }
+
+        public override string ToString()
+        {
+            return "Task: My name - " + name;
+        }
+    }
     public class User
     {
         public User(int weight) => Weight = weight;

@@ -1,0 +1,15 @@
+-----------------lr_11.Book-----------------
+Assembly:lr_11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Void .ctor()
+Void .ctor(System.String)
+Methodds:
+get_Name
+set_Name
+GetType
+ToString
+Equals
+GetHashCode
+Fields and properties:
+System.String Name
+Interfaces:
+

@@ -1,32 +1,16 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Runtime.CompilerServices;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static lr_12.VISDiskInfo;
 
 namespace lr_12
 {
-    public class Programm
+    public static class VISDiskInfo
     {
-        static void Main(string[] args)
+        //DriveInfo[] drives = DriveInfo.GetDrives();
+        public static void PrintDiskInfo(DriveInfo[] drives)
         {
-            string path = "vislogfile.txt";
-
-            File.WriteAllText(path, "-----Logging-------\n");
-            DriveInfo[] drives = DriveInfo.GetDrives();
-            //VISDiskInfo disk = new VISDiskInfo();
-
-            PrintDiskInfo(drives);
-            VISFileInfo.FileInf(path);
-
-
-            /*DriveInfo[] drives = DriveInfo.GetDrives();
-
             foreach (DriveInfo drive in drives)
             {
                 Console.WriteLine($"Название: {drive.Name}");
@@ -38,8 +22,7 @@ namespace lr_12
                     Console.WriteLine($"Метка диска: {drive.VolumeLabel}");
                 }
                 Console.WriteLine();
-            }*/
-
+            }
         }
     }
 }

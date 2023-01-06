@@ -16,6 +16,7 @@ namespace lr_12
         static void Main(string[] args)
         {
             string path = "vislogfile.txt";
+            string dir = "visdir";
 
             File.WriteAllText(path, "-----Logging-------\n");
             DriveInfo[] drives = DriveInfo.GetDrives();
@@ -23,7 +24,13 @@ namespace lr_12
 
             PrintDiskInfo(drives);
             VISFileInfo.FileInf(path);
+            VISDirInfo.DirInfo(@"D:\Универ\3-й семестр\Лабы ООП\Лр12\lr_12\lr_12");
+            VISFileManager.Read(@"D:\");
+            VISFileManager.Create("VISInspect", "visdirinfo", "visdirinfo2");
 
+            VISFileManager.Zip();
+            VISFileManager.Unzip(@"D:\Универ\3-й семестр\Лабы ООП\Лр12\VISInspect\VISUnzip");
+            FindAndWrite.Actions();
 
             /*DriveInfo[] drives = DriveInfo.GetDrives();
 

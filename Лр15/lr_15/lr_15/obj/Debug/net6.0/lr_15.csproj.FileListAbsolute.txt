@@ -1,0 +1,15 @@
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\bin\Debug\net6.0\lr_15.exe
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\bin\Debug\net6.0\lr_15.deps.json
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\bin\Debug\net6.0\lr_15.runtimeconfig.json
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\bin\Debug\net6.0\lr_15.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\bin\Debug\net6.0\lr_15.pdb
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.csproj.AssemblyReference.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.GeneratedMSBuildEditorConfig.editorconfig
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.AssemblyInfoInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.AssemblyInfo.cs
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.csproj.CoreCompileInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\refint\lr_15.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.pdb
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\lr_15.genruntimeconfig.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр15\lr_15\lr_15\obj\Debug\net6.0\ref\lr_15.dll

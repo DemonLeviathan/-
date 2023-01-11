@@ -1,0 +1,15 @@
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.csproj.AssemblyReference.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.GeneratedMSBuildEditorConfig.editorconfig
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.AssemblyInfoInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.AssemblyInfo.cs
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.csproj.CoreCompileInputs.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\bin\Debug\net6.0\lr_17.exe
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\bin\Debug\net6.0\lr_17.deps.json
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\bin\Debug\net6.0\lr_17.runtimeconfig.json
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\bin\Debug\net6.0\lr_17.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\bin\Debug\net6.0\lr_17.pdb
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\refint\lr_17.dll
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.pdb
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\lr_17.genruntimeconfig.cache
+D:\Универ\3-й семестр\Лабы ООП\Лр17-20\lr_17\lr_17\obj\Debug\net6.0\ref\lr_17.dll

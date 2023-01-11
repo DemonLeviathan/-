@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Collections.Concurrent;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace lr_15
 {
@@ -117,7 +118,20 @@ namespace lr_15
             });
             Console.WriteLine("-------------------------------------------");
 
+            block = new BlockingCollection<string>(5);
+            Task Shop = new Task(AddProduct);
+            Task Client = new Task(PurchasedProduct);
+            Shop.Start();
+            Client.Start();
+            Shop.Wait();
+            Client.Wait();
 
+            Console.WriteLine("-------------------------------------------");
+
+            Async();
+            string it = Console.ReadLine();
+            Console.WriteLine($"{it} {it} {it} Enter... ");
+            ReadKey();
         }
     }
 }

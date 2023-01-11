@@ -31,22 +31,6 @@ namespace lr_12
             VISFileManager.Zip();
             VISFileManager.Unzip(@"D:\Универ\3-й семестр\Лабы ООП\Лр12\VISInspect\VISUnzip");
             FindAndWrite.Actions();
-
-            /*DriveInfo[] drives = DriveInfo.GetDrives();
-
-            foreach (DriveInfo drive in drives)
-            {
-                Console.WriteLine($"Название: {drive.Name}");
-                Console.WriteLine($"Тип: {drive.DriveType}");
-                if (drive.IsReady)
-                {
-                    Console.WriteLine($"Объем диска: {drive.TotalSize}");
-                    Console.WriteLine($"Свободное пространство: {drive.TotalFreeSpace}");
-                    Console.WriteLine($"Метка диска: {drive.VolumeLabel}");
-                }
-                Console.WriteLine();
-            }*/
-
         }
     }
 }

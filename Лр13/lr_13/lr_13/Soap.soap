@@ -1,9 +1,10 @@
 <SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/clr/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
   <SOAP-ENV:Body>
     <a1:Shaman id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/lr_13/lr_13%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
-      <weapon id="ref-2">book of curses</weapon>
-      <skill id="ref-3">curse</skill>
+      <skill id="ref-2">curse</skill>
       <IDFighter>2</IDFighter>
     </a1:Shaman>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>:Shaman>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

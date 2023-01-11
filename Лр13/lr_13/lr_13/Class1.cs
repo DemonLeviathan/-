@@ -19,9 +19,9 @@ namespace lr_13
         /*SerializationBinder Binder { get; set; }
         StreamingContext Context { get; set; }
         ISurrogateSelector SurrogateSelector { get; set; }*/
-       /* object Deserialize (Stream serializationStream);
-        void Serialize(Stream serializationStream, object graph);*/
-
+        /* object Deserialize (Stream serializationStream);
+         void Serialize(Stream serializationStream, object graph);*/
+        [NonSerialized]
         public string weapon;
         public string skill;
         public int IDFighter;

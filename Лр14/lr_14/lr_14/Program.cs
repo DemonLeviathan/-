@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Runtime.CompilerServices;
+using System.Xml.Linq;
+using System.Net.Sockets;
+using System.IO;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Loader;
+using System.Threading;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace lr_11
 {
@@ -51,7 +53,38 @@ namespace lr_11
 
             try
             {
+                Console.WriteLine("Enter a number");
+                int num = Convert.ToInt32(Console.ReadLine());
+                Thread thread = new Thread(CountNums);
+                thread.Name = "New stream";
+                thread.Start(num);
+                thread.Join();
 
+                Thread thread1 = new Thread(CountOddNum) { Name = "OddNumbersThread", };
+                Thread thread2 = new Thread(CountEvenNum) { Name = "EvenNumbersThread", };
+                thread1.Start(num);
+                thread2.Start(num);
+
+                thread1.Join();
+                thread2.Join();
+                Console.WriteLine("-------------------------");
+
+                File.WriteAllText("file3.txt", " ");
+
+                Thread thread3 = new Thread(OddNum) { Name = "Odd" };
+                Thread thread4 = new Thread(EvenNum) { Name = "Even" };
+                thread3.Start(num);
+                thread4.Start(num);
+                thread3.Join();
+                thread4.Join();
+
+                Console.WriteLine("-------------------------");
+
+                int number = 0;
+                TimerCallback timer = new TimerCallback(Count);
+                Timer timer1 = new Timer(timer, number, 0, 1000);
+                Console.WriteLine("What time is it?");
+                Console.ReadLine();
             }
             catch (Exception ex)
             {
@@ -73,6 +106,127 @@ namespace lr_11
 
             var context = new AssemblyLoadContext(name: domain.FriendlyName, isCollectible: true);
             Assembly assembly = context.LoadFromAssemblyPath(domain.BaseDirectory);
+        }
+
+        static void Count(object obj)
+        {
+            Console.WriteLine($"Time: {DateTime.Now.ToLongTimeString()}");
+        }
+
+        static bool IsPrime(int num)
+        {
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
+        static void CountNums(object obj)
+        {
+            using (StreamWriter sw = new StreamWriter("file.txt", false))
+            {
+                sw.WriteLine("Simple numbers");
+            }
+
+            Console.WriteLine($"Thread name: {Thread.CurrentThread.Name}");
+            Console.WriteLine($"Thread priority: {Thread.CurrentThread.Priority.ToString()}");
+            Console.WriteLine($"Thread Id: {Thread.CurrentThread.ManagedThreadId.ToString()}");
+            Console.WriteLine($"Thread status: {Thread.CurrentThread.ThreadState.ToString()}");
+
+            if (obj is int n)
+            {
+                for (int i = 1; i < n; i++)
+                {
+                    if (IsPrime(i))
+                    {
+                        Console.WriteLine(i);
+                        using (StreamWriter sw = new StreamWriter("file.txt", true))
+                        {
+                            sw.WriteLine(i);
+                            sw.Close();
+                        }
+                    }
+                }
+            }
+        }
+        static string locker = "null";
+        static void CountOddNum(object obj)
+        {
+            lock (locker)
+            {
+                if (obj is int n)
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (i % 2 == 1)
+                        {
+                            Thread.Sleep(1000);
+                            Console.WriteLine(i);
+                            using (StreamWriter sw = new StreamWriter("file2.txt", true))
+                            {
+                                sw.WriteLine(i);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        static void CountEvenNum(object obj)
+        {
+
+            if (obj is int n)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        using (StreamWriter sw = new StreamWriter("file2.txt", true))
+                        {
+                            sw.WriteLine(i);
+                        }
+                    }
+                }
+            }
+        }
+
+        static void OddNum(object obj)
+        {
+            Monitor.Enter(locker);
+            {
+                if (obj is int n)
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            Console.WriteLine(i);
+                            using (StreamWriter sw = new StreamWriter("file3.txt", true))
+                            {
+                                sw.WriteLine(i);
+                            }
+                        }
+                    }
+                }
+            }
+            Monitor.Exit(locker);
+        }
+
+        static void EvenNum(object obj)
+        {
+            if (obj is int n)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (i % 2 == 1)
+                    {
+                        Console.WriteLine(i);
+                        File.AppendAllText("file3.txt", $"{i} \n");
+                    }
+                }
+            }
         }
     }
 }
